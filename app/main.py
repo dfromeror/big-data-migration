@@ -1,6 +1,6 @@
 from fastapi import FastAPI, status
 
-from routers import department
+from routers import department, job
 from config.database import create_tables
 
 from fastapi.exceptions import RequestValidationError
@@ -12,6 +12,7 @@ app = FastAPI()
 
 
 app.include_router(department.router)
+app.include_router(job.router)
 
 @app.get("/")
 async def root():

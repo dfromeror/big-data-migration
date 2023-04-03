@@ -9,4 +9,4 @@ class Job(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     job = Column(String)
-    hired_employee = relationship("HiredEmployee", back_populates="job")
+    #hired_employee = relationship("HiredEmployee", back_populates="job")
