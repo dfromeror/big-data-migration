@@ -55,13 +55,14 @@ def get_all_hired_employees(name: Optional[str] = None,db: Session = Depends(get
         return HiredEmployeeRepo.fetch_all(db)
 
 
-@app.get('/hired_employees1', tags=["HiredEmployee"])
+@app.get('/employees_hired', tags=["HiredEmployee"])
 def get_all_hired_employees(name: Optional[str] = None,db: Session = Depends(get_db)):
     """
     Get all the hired_employees jobd in database
     """
+    print("000000")
     hired_employees =[]
-    db_hired_employee = HiredEmployeeRepo.fetch_by_name1(db,name)
+    db_hired_employee = HiredEmployeeRepo.employees_hired(db,name)
     hired_employees.append(db_hired_employee)
     return hired_employees
 
